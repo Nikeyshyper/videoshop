@@ -60,6 +60,14 @@ class CatalogController {
 		return "catalog";
 	}
 
+	@GetMapping("/cds")
+	String cdCatalog(Model model) {
+
+		model.addAttribute("catalog", catalog.findByType(DiscType.CD));
+		model.addAttribute("title", "catalog.cd.title");
+
+		return "catalog";
+	}
 	@GetMapping("/blurays")
 	String blurayCatalog(Model model) {
 
