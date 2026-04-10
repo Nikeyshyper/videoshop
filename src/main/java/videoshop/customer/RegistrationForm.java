@@ -48,13 +48,14 @@ import org.springframework.validation.Errors;
  */
 class RegistrationForm {
 
-	private final @NotEmpty String name, password, address;
+	private final @NotEmpty String name, password, address, mailAddress;
 
-	public RegistrationForm(String name, String password, String address) {
+	public RegistrationForm(String name, String password, String address, String mailAddress) {
 
 		this.name = name;
 		this.password = password;
 		this.address = address;
+		this.mailAddress = mailAddress;
 	}
 
 	public String getName() {
@@ -68,6 +69,8 @@ class RegistrationForm {
 	public String getAddress() {
 		return address;
 	}
+
+	public String getMailAddress(){return mailAddress;}
 
 	public void validate(Errors errors) {
 		// Complex validation goes here
